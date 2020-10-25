@@ -11,7 +11,7 @@ include('includes/navbar.php');
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Admin Data</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><i class="far fa-times-circle" style="color: red;"></i></span>
         </button>
       </div>
       <form action="code.php" method="POST">
@@ -53,8 +53,10 @@ include('includes/navbar.php');
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Admin Profile
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-          Add Admin Profile
+        <div class="float-right">
+          <button type="button" class="btn btn-primary btn-circle" data-toggle="modal" data-target="#addadminprofile">
+            <i class="fas fa-user-plus"></i>
+        </div>
         </button>
       </h6>
     </div>
@@ -65,13 +67,13 @@ include('includes/navbar.php');
 
       if (isset($_SESSION['success']) && $_SESSION['success'] != '') {
         # code...
-        echo '<h2 class="bg-primary text-white"> ' . $_SESSION['success'] . ' </h2>';
+        echo '<div class="alert alert-success" role="alert"> ' . $_SESSION['success'] . ' </div>';
         unset($_SESSION['success']);
       }
 
       if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
         # code...
-        echo '<h2 class="bg-danger text-white"> ' . $_SESSION['status'] . ' </h2>';
+        echo '<div class="alert alert-danger" role="alert"> ' . $_SESSION['status'] . ' </div>';
         unset($_SESSION['status']);
       }
 
