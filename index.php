@@ -1,6 +1,6 @@
 <?php
-include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/header.php');
+include('includes/navbar.php');
 ?>
 
 
@@ -10,8 +10,7 @@ include('includes/navbar.php');
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
   </div>
 
   <!-- Content Row -->
@@ -26,7 +25,14 @@ include('includes/navbar.php');
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Admin</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-               <h4>Total Admin: *</h4>
+                <?php
+                require 'dbconfig.php';
+                $query = "SELECT id FROM register ORDER BY id";
+                $query_run = mysqli_query($connection, $query);
+
+                $row = mysqli_num_rows($query_run);
+                echo '<h1>' . $row . '</h1>';
+                ?>
 
               </div>
             </div>
@@ -68,8 +74,7 @@ include('includes/navbar.php');
                 </div>
                 <div class="col">
                   <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
-                      aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
@@ -110,6 +115,6 @@ include('includes/navbar.php');
 
 
   <?php
-include('includes/scripts.php');
-include('includes/footer.php');
-?>
+  include('includes/scripts.php');
+  include('includes/footer.php');
+  ?>
