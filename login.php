@@ -20,17 +20,17 @@ include('includes/header.php');
             <div class="col-lg-12">
               <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">Login Here!</h1>
+                  <h1 class="h4 text-gray-900 mb-4"><b>Sign In</b></h1>
                   <?php
 
                   if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
-                    echo '<h2 class="bg-danger text-white"> ' . $_SESSION['status'] . ' </h2>';
+                    echo '<div class="alert alert-danger" role="alert">' . $_SESSION['status'] . '</div>';
                     unset($_SESSION['status']);
                   }
                   ?>
                 </div>
 
-                <form class="user" action="logincode.php" method="POST">
+                <form class="user" action="code.php" method="POST">
 
                   <div class="form-group">
                     <input type="email" name="emaill" class="form-control form-control-user" placeholder="Enter Email Address...">
