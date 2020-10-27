@@ -5,7 +5,7 @@ session_start();
 // if ($dbconfig) {
 //     // echo "Database Connected";
 // } else {
-//     header("Location: database/dbconfig.php");
+//     header("Location: dbconfig.php");
 // }
 
 // Redirect Invalid User to login [ security ]
